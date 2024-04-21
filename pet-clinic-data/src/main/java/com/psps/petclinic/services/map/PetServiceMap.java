@@ -1,11 +1,12 @@
-package com.psps.services.map;
+package com.psps.petclinic.services.map;
 
-import com.psps.model.Pet;
-import com.psps.services.CrudService;
+import com.psps.petclinic.model.Pet;
+import com.psps.petclinic.services.CrudService;
+import com.psps.petclinic.services.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet,Long> implements CrudService<Pet,Long> {
+public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetService {
     @Override
     public Pet findById(Long id) {
         return super.findById(id);

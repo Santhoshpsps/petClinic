@@ -1,4 +1,4 @@
-package com.psps;
+package com.psps.petclinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

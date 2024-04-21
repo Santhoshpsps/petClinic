@@ -1,4 +1,4 @@
-package com.psps.model;
+package com.psps.petclinic.model;
 
 import java.io.Serializable;
 

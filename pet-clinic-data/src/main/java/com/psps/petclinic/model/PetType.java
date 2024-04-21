@@ -1,4 +1,4 @@
-package com.psps.model;
+package com.psps.petclinic.model;
 
 public class PetType extends BaseEntity{
     private String name;

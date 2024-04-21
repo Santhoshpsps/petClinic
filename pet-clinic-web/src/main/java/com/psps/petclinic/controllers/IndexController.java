@@ -1,4 +1,4 @@
-package com.psps.controllers;
+package com.psps.petclinic.controllers;
 
 
 import org.springframework.stereotype.Controller;

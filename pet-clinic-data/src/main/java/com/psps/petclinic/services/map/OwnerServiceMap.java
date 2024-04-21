@@ -1,11 +1,12 @@
-package com.psps.services.map;
+package com.psps.petclinic.services.map;
 
-import com.psps.model.Owner;
-import com.psps.services.CrudService;
+import com.psps.petclinic.model.Owner;
+import com.psps.petclinic.services.CrudService;
+import com.psps.petclinic.services.OwnerService;
 
 import java.util.Set;
 
-public  class OwnerServiceMap extends AbstractMapService<Owner,Long> implements CrudService<Owner,Long> {
+public  class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService {
     @Override
     public Owner findById(Long id) {
         return super.findById(id);
@@ -25,5 +26,10 @@ public  class OwnerServiceMap extends AbstractMapService<Owner,Long> implements 
     @Override
     public Owner save(Owner object) {
         return super.save(object.getId(),object);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }

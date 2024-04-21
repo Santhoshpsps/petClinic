@@ -1,4 +1,4 @@
-package com.psps.services;
+package com.psps.petclinic.services;
 
 import java.util.Set;
 

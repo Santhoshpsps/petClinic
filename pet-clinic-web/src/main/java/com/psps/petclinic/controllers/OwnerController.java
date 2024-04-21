@@ -1,14 +1,14 @@
-package com.psps.controllers;
+package com.psps.petclinic.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("/vets")
+@RequestMapping("/owners")
 @Controller
-public class VetController {
+public class OwnerController {
     @RequestMapping({"","/","/index","/index.html"})
-    public String listAllVets(){
-        return "vets/index";
+    public String listAllOwners(){
+        return "owners/index";
     }
 }

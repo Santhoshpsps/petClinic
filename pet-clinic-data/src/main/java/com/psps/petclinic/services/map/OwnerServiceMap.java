@@ -3,9 +3,11 @@ package com.psps.petclinic.services.map;
 import com.psps.petclinic.model.Owner;
 import com.psps.petclinic.services.CrudService;
 import com.psps.petclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public  class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService {
     @Override
     public Owner findById(Long id) {

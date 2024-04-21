@@ -3,9 +3,6 @@ package com.psps.petclinic.bootstrap;
 import com.psps.petclinic.model.Owner;
 import com.psps.petclinic.model.Vet;
 import com.psps.petclinic.services.*;
-import com.psps.petclinic.services.map.OwnerServiceMap;
-import com.psps.petclinic.services.map.PetServiceMap;
-import com.psps.petclinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,10 +12,11 @@ public class DataLoader implements CommandLineRunner {
     private final PetService petService;
     private final VetService vetService;
 
-    public DataLoader(){
-        this.ownerService = new OwnerServiceMap();
-        this.petService = new PetServiceMap();
-        this.vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, PetService petService, VetService vetService){
+
+        this.ownerService = ownerService;
+        this.petService = petService;
+        this.vetService = vetService;
     }
     @Override
     public void run(String... args) throws Exception {

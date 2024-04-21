@@ -3,9 +3,11 @@ package com.psps.petclinic.services.map;
 import com.psps.petclinic.model.Vet;
 import com.psps.petclinic.services.CrudService;
 import com.psps.petclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {
     @Override
     public Vet findById(Long id) {

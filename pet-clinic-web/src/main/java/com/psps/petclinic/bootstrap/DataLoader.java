@@ -15,14 +15,16 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, PetService petService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService){
+    public DataLoader(OwnerService ownerService, PetService petService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService){
 
         this.ownerService = ownerService;
         this.petService = petService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
     @Override
     public void run(String... args) throws Exception {
@@ -74,7 +76,8 @@ public class DataLoader implements CommandLineRunner {
         harish.setCity("DOM");
         harish.setTelephone("+1-023345324");
 
-        ownerService.save(harish);
+
+
 
         Pet pet2 = new Pet();
         pet2.setName("Rocky");
@@ -83,7 +86,18 @@ public class DataLoader implements CommandLineRunner {
         pet2.setBirthDate(LocalDate.now());
         harish.getPets().add(pet2);
 
+        ownerService.save(harish);
+
         System.out.println("Loaded Owners ...");
+
+        Visit catVisit = new Visit();
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Feverish");
+        catVisit.setPet(pet2);
+
+        visitService.save(catVisit);
+
+        System.out.println("Loaded visit ... ");
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Ronnie");
